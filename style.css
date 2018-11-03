@@ -71,3 +71,7 @@ html, body {
   list-style-position: inside;
   text-align: left;
 }
+
+div.centered {
+  text-align: center;
+}
