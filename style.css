@@ -1,0 +1,73 @@
+html, body {
+  margin: 0;
+  font-family: "Helvetica", "Arial", "sans-serif";
+}
+
+  body {
+    max-width: 80em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #777;
+  }
+
+  body a:hover {
+    color: black;
+  }
+
+#header {
+  border-bottom: 1px solid #AAA;
+  padding: 10px;
+}
+
+#name-container {
+   float: left;
+   font-size: 36px;
+   color: #498DA3;
+}
+
+#links-container {
+   float: right;
+   padding-top: 16px;
+   font-size: 20px;
+}
+
+  #links-container a {
+    margin-left: 8px;
+  }
+
+.clear-both {
+   clear: both;
+}
+
+#content {
+  padding: 10px;
+}
+
+.content-title {
+  text-align: center;
+}
+
+#msu-logo {
+  margin-left: -200px;
+  margin-top: -50px;
+  float: right;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-list li {
+  margin-top: 8px;
+}
+
+.experience-list {
+  list-style-position: inside;
+  text-align: left;
+}
