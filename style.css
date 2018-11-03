@@ -75,3 +75,8 @@ html, body {
 div.centered {
   text-align: center;
 }
+
+.credit-text {
+  font-style: italic;
+  font-size: 8px;
+}
