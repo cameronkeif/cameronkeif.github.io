@@ -39,13 +39,13 @@
         </p>
 
         <p>
-          So what are React hooks? This is a new feature proposal live in React v 16.7.0-alpha. There is an <a href="https://github.com/reactjs/rfcs/pull/68">open RFC</a> where discussion of the full implementation is taking place.  React hooks basically allow you to use state and other React features (such as lifecycle methods)
+          So what are React hooks? This is a new feature proposal live in React v16.7.0-alpha. There is an <a href="https://github.com/reactjs/rfcs/pull/68">open RFC</a> where discussion of the full implementation is taking place.  React hooks basically allow you to use state and other React features (such as lifecycle methods)
           without needing to create a new class. An overview can be found <a href="https://reactjs.org/docs/hooks-overview.html">here.</a>
         </p>
 
         <p>
           The biggest win here, in my opinion, is that this allows components to very easily share stateful logic. For example, a common pattern I find
-          myself writing is flags maintained in component/redux state indicaitng "isLoading", "isBeingCreated", "isBeingEdited", etc. With hooks
+          myself writing is flags maintained in component/redux state indicating "isLoading", "isBeingCreated", "isBeingEdited", etc. With hooks
           I could abstract some of that handling out to an "isBusy" hook and remove that logic from all those individual components.
       </p>
 
@@ -96,10 +96,10 @@
         </div>
 
         <p>
-        Both of these components achieve the same affect of updating the document title on initial load and when the component updates, but the latter with hooks has much less boilerplate.
-        Obviously this is a very trivial example, but you can image as more and more business logic creeps into those lifecycle methods, it sure is nice to be
+        Both of these components achieve the same effect of updating the document title on initial load and when the component updates, but the latter with hooks has much less boilerplate.
+        Obviously this is a very trivial example, but you can imagine as more and more business logic creeps into those lifecycle methods, it sure is nice to be
         able to very simply reuse it. One might argue you could just write a function encapsulating this logic, 
-        but what happens when there are more and more pieces of logic being shared? It's just a nice, native way to handle this.
+        but what happens when there are more and more pieces of logic being shared? It's just a nice, native way to handle this rather than writing some hacky "onMountAndUpdate" function.
       </p>
 
       <hr />
@@ -109,8 +109,9 @@
         </p>
 
         <p>
-          Probably the biggest concern I have is how easy this looks on the surface. The most difficult part of modern front end development (in my opinion) is
-          state management and its side effects. A custom hook manages its own state and this can lead to unpredictable behavior.
+          Probably the biggest concern I have is how easy this code <i>looks</i> compared to how complex is actually is. I think hooks that are well documented and well written will be very powerful and useful, 
+          but on the other hand, hooks that are poorly designed/implemented could easily become a spaghetti nightmare. One of the most difficult parts of modern front end development (in my opinion) is
+          state management and its side effects. A custom hook manages its own state and this can lead to side effects and behavior that is not immediately obvious.
           I would personally have more boilerplate code that is predictable than terse code that is unpredictable and causes a variety of side effects.
         </p>
 
@@ -123,7 +124,7 @@
         <hr />
 
         <p>
-          Overall, I think hooks are a good addition to React, but I think they need to be managed carefully. I would not consider them a necessary future necessity for good React code, but rather
+          Overall, I think hooks are an excellent addition to React, but I think they need to be managed carefully. I would not consider them a necessary future necessity for good React code, but rather
           another tool for our toolbox where and when it makes sense. As long as custom hooks are clearly documented, and effect hooks are used appropriately, I think they can be
           quite powerful. Hooks are definitely something I look forward to experimenting with, but I certainly will not be rushing to add them to any production code for awhile.
         </p>
