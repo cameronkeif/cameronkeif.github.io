@@ -111,3 +111,7 @@ code {
   margin: 0;
   padding: 3.2px 6.4px;
 }
+
+span.inline-code {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+}
