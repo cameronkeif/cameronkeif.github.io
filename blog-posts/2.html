@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128626322-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-128626322-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Cameron Keif</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="name-container">Cameron Keif</div>
+      <div id="links-container">
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../contact.html">Contact Information</a>
+        <a href="../blog.html">Blog</a>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+
+    <div id="content">
+      <div class="content-title"><h1>Blog</h1></div>
+      <div class="content-text">
+        <h2>January 10 2018 - Memoizing Functions</h2>
+
+        <p>
+            Recently I had to implement something at my job which involved determining if a UUID was contained somewhere in a big set of JSON.
+            I know that's not very descriptive, but you know I can't be giving away that secret sauce ;). During code review, it was suggested that I memoize
+            this function. This drastically improved performance on something that would be called many, many times. I had forgotten about memoization 
+            and how useful that can be situationally, so I thought this would be a good quick topic to write about!
+        </p>
+
+        <p>
+            So what does it mean to "memoize" a function? Memoization means that we store the results of an expensive function, and if the same input is provided
+            we just return the original value. If that function is called with a set of arguments that are cached, we do not need to execute the code at all, 
+            we can just go ahead and return the old value. So if your function involves iterating over an unchanged array of 300 elements, rather than 
+            N * 300 operations, or O(N) operations, you end up with 300 iterations + a cache lookup, which is drastically faster.
+        </p>
+        <p>
+          In this case, this was particularly helpful. The JSON was parsed into an object beforehand, but still required a little bit of iteration and diving into the body
+          to find the particular values being examined. While the code could have been cleaned up a bit so only the relevant bit was maintained in state, I've found it
+          is often useful to keep the full payload somewhere in state as it's very likely you'll be using other parts of it very soon (otherwise why would they be in there?)
+        </p>
+        <p>
+          There is a good, simple explanation of how one might write a memoized function in JavaScript 
+          <a href="https://medium.freecodecamp.org/understanding-memoize-in-javascript-51d07d19430e"> here</a>, but I found the library
+          <a href="https://www.npmjs.com/package/memoizee">memoizee</a> to be great for most cases, as it abstract all the cache management away.
+          For custom caching logic or advanced cases, you might need some good ol' elbow grease, but in most cases I think a library like this suffices.
+        </p>
+        <p>
+          Surely, there are plenty of other solutions out there to handle situations like this. Maybe you could massage the API reponse into a more digestable
+          data structure. Maybe you could use something like <a href="https://www.npmjs.com/package/reselect">reselect</a>. But, for a nice quick way
+          to improve performance on something that is called many times with the same arguments, consider giving memoization a shot!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
