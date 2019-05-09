@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128626322-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-128626322-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Cameron Keif</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="name-container">Cameron Keif</div>
+      <div id="links-container">
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../contact.html">Contact Information</a>
+        <a href="../blog.html">Blog</a>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+
+    <div id="content">
+      <div class="content-title"><h1>Blog</h1></div>
+      <div class="content-text">
+        <h2>May 10 2019 - Short-lived Data and Caching</h2>
+        <p>
+            Something I have recently learned to use at work is a nifty little persistence tool called <a href="https://memcached.org/">memcached</a>.
+            Memcached is a "distributed memory object caching system". In other words, it's essentially a giant key-value pair store. What, you thought
+            all I did was front-end? I <b>am</b> full stack ;). Regardless I had never really thought about this before, after all, what's wrong with good ol' fashioned databases?
+        </p>
+        <p>
+            Tools like memcached allow you to store ephemeral data in a very performant way and not have to worry about storing a bunch of data that isn't used anymore.
+            You definitely wouldn't want to store things like users or some resource that's long lived, but for things like a one-time password code or any other data that
+            wouldn't matter after a short amount of time, memcached is a pretty cool solution. You can also put it on top of a frequently read table as, you know... a cache.
+        </p>
+        <p>
+          Memcached allows you to configure how long you want your data to stick around, and then you just plop data in, and once the time expires, it gets removed. It's
+          much faster than a typical database because 1. by nature there's less data than if you implemented this in a database, and 2. the data is stored in memory instead
+          of on disk.
+        </p>
+        <p>
+          I remember on a previous project I worked on a few years ago we had a table that persisted some data, and then a cron job that would clean it up every hour.
+          It was a pain because sometimes the cron job wouldn't run correctly or would encounter errors, and we'd need to manually clean it up (in retrospect, a quicker fix 
+          would have been to just fix the job, but you know how refactoring gets prioritized sometimes ;)). Had we used a memory based caching system instead, we would
+          have been able to not worry about cleaning the table up, our code would have been cleaner (memcached is insanely simple to consume as a developer), and on top
+          of all that, it would have been faster!
+        </p>
+        <p>
+          There are plenty of excellent alternatives, such as <a href="https://redis.io/">redis</a> and <a href="http://www.alachisoft.com/ncache/">NCache</a>
+          as well, but it just so happens that we use memcached in our stack at Ping, and I thought it was a pretty cool way to improve performance and make life easier.
+        </p>
+        <p>
+          Next time you find yourself designing something and feel like the data doesn't really need to stick around very long, 
+          or find the same data is being read multiple times from a table in a short period of time, I'd definitely recommend giving one of
+          these caching tools a try!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
