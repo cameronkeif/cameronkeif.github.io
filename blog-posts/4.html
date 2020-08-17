@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Cameron Keif</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="name-container">Cameron Keif</div>
+      <div id="links-container">
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../contact.html">Contact Information</a>
+        <a href="../blog.html">Blog</a>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+
+    <div id="content">
+      <div class="content-title"><h1>Blog</h1></div>
+      <div class="content-text">
+        <h2>August 16 2020 - Passwords</h2>
+        <p><i>Note: I mention a few specific products in this post, but I have no affiliation with them. I am only referencing them because it's what I personally use</i></p>
+        <p>
+            Security is one of those things that everyone tries to practice, and practice well,
+            but often falls short due to lack of knowledge or inconvenience. Sometimes, doing things
+            in a more secure way can lead to a little more friction during authentication, but I believe
+            it is always better to be as safe as is reasonably possible - especially for sensitive accounts
+            such as banking. There are many ways to protect ourselves online, but let's start with the absolute basic first step: passwords
+        </p>
+        <b><u>What makes a strong password?</u></b>
+        <p>
+            The most important thing with any online service (or really anything requiring a password) is to have a strong password.
+            A common misconception is that adding an uppercase letter, number, and "symbol" (such as !, @, $, etc) is the best way to make your password stronger.
+            And that that is usually true - ch3353Yd00dL3 is a better password than cheeseydoodle for example. However, an even stronger password would be
+            something like "When I was 5 years old, my mom never let me eat cheesedoodles!". This is because
+            of a concept known as <a href="https://en.wikipedia.org/wiki/Password_strength#Entropy_as_a_measure_of_password_strength">password entropy</a>.
+            Basically, a longer password is more effective at preventing brute force attacks, which is one of the most likely ways an attack can occur. Let's
+            take a look at how long it would take to brute force the three passwords outlined above:
+        </p>
+        <table>
+            <thead>
+                <th>Password</th>
+                <th>Time to guess (Assuming one hundred trillion guesses per second)</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cheeseydoodle</td>
+                    <td>7.17 hours</td>
+                </tr>
+                <tr>
+                    <td>ch3353Yd00dL3</td>
+                    <td>64.65 years</td>
+                </tr>
+                <tr>
+                    <td>When I was 5 years old, my mom never let me eat cheesedoodles!</td>
+                    <td>1.34 thousand trillion trillion trillion trillion trillion trillion trillion trillion centuries</td>
+                </tr>
+            </tbody>
+        </table>
+        <i>Source: <a href="https://www.grc.com/haystack.htm">Gibson Research Corporation</a></i>
+        <p>
+            As you can see, by using different characters, <i>and</i> by increasing the password length, we increase the entropy and the search space,
+            which makes it much more difficult to brute force our passwords. Furthermore, our third password has the advantage of being
+            relatively easy to remember. The second password is much stronger than the first, but it may be harder for us to remember off the top of our head.
+        </p>
+        <b><u>Checking your passwords</u></b>
+        <p>
+            The most common way people get "hacked" nowadays is that your password was leaked in a data breach, so somewhere out there
+            in some giant list is your email and password. A lot of people tend to reuse the same password, perhaps tweaked a little bit by adding an "!" on the endand capitalizing the
+            first letter if the site requires it. An attacker might simply use that password and try to access your email, facebook, bank, or any other common account. You can check if any of your
+            passwords were involved in a data breach by checking <a href="https://haveibeenpwned.com/Passwords">haveibeenpwned.com</a> (you can also check your email on the same site) and should certainly
+            change any of your passwords involved in a breach. It should be noted, <a href="https://www.infosecurity-magazine.com/news/haveibeenpwned-set-open/">this service was recently open-sourced</a>.
+            I personally trust the service because of this, but if you'd rather not enter your information, you can also just download the website's database of hashed passwords and search it yourself.
+        </p>
+        <b><u>Password managers</u></b>
+        <p>
+            So if we have to remember a unique password for every website, and it also has to be long and complex,
+            how can we remember all of this?! This is where a password manager comes into play! A password manager is basically
+            just an encrypted database of passwords that you can put on all of your devices. You just need to memorize a single password (to unlock your password manager),
+            and then the password manager allows you to copy/paste, or autofill, any other passwords. Most password managers also come with
+            a password generator, so you can safely generate secure, unique passwords such as "BTReiZ443@5Wq&HU*uUVK@%vDU^b9DcD6Q7EtEL6gwr#ERb6!" with the click of a button.
+            I personally use <a href="https://bitwarden.com">bitwarden</a>, and have used <a href="https://keepass.info/">keepass</a> in the past, but there are a lot of different flavors out there.
+        </p>
+        <b><u>Passwords we must remember</u></b>
+        <p>
+            Finally, the last piece of the puzzle, what do we do about our password manager's master password, or to a lesser extent our machine passwords? These are the passwords that we cannot put in our password manager and
+            simply need to commit to memory. I recommend a concept known as <a href="https://www.eff.org/dice">password dicing</a>. Simply use a random number generator to come up with several (I recommend 6-10) 5 digit numbers, look up the word in eff's list (or any other similar list),
+            and each number is a word. Then you can come up with a passphrase such as "abstract abdomen brink crawling cosmetics eggnog". You'd be surprised how quickly you'll remember this phrase. Even if someone knew you were using this exact list, there are still
+            221073919720733357899776 potential combinations, which is 2^77 bits of entropy, or 47 years of brute forcing against this particular list at 100 trillion guesses per second. Not to mention most password managers
+            worth their salt support some kind of second factor authentication such as a key file or authenticator app, and you end up with a very safe, but very memorable password.
+        </p>
+        <b><u>In closing</u></b>
+        <p>
+            Finally, the weakest link with any kind of security is the human, so be smart and stay vigilant! Don't leave sticky notes on your work monitor, don't share your passwords with anyone, and be careful of any links you click on!
+            Due to data breaches, both known and unknown, it's definitely a good idea to try and change your passwords frequently (I usually do so about every 3 months) and set up multi-factor authentication as well.
+            In closing, if you're interested in hardening your digital security, I suggest you look into a password manager, and set up a few accounts in it. As you get used to it, add more. Make sure you use a very strong master password, perhaps with the dicing method above. As time goes on, keep creating/modifying your passwords
+            so that they're all unique. Finally, spend a few minutes and check <a href="https://haveibeenpwned.com">haveibeenpwned.com</a> to make sure you're not involved in any data breaches, and if you are, be sure to update those passwords!
+        </p>
+        <p>
+            Stay safe everyone!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
