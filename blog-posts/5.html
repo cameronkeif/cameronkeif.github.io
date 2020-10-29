@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Cameron Keif</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="name-container">Cameron Keif</div>
+      <div id="links-container">
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../experience.html">Experience</a>
+        <a href="../contact.html">Contact Information</a>
+        <a href="../blog.html">Blog</a>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+
+    <div id="content">
+      <div class="content-title"><h1>Blog</h1></div>
+      <div class="content-text">
+        <h2>October 28 2020 - Higher-Order Components</h2>
+        <p>
+            Have you ever been writing a React component and though to yourself, "Wow, I sure have seen this about 8 times now..."
+        </p>
+        <p>
+            If so, you're not alone. The nature of React and the front end ecosystem in general makes it difficult to abstract code out.
+            Maybe this is just me coming from a full-stack background where I work in Java a lot, but it's just so much more natural to
+            use base classes, interfaces, etc. in an OOP environment. And DANG! It's so great when it's done right.
+        </p>
+        <p>
+            Enter Higher-Order Components in the React world. You do know that <a href="https://reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both">
+            class-based components are like, so 2000 and late now, right?</a> Pretending JavaScript (and by extension the React framework) is an Object-Oriented environment
+            is not ideal. Sure, there are classes in JS, but ultimately modern JS is better described as <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming.</a>
+        </p>
+        <p>
+            In a functional programming paradigm, a <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order function</a> is simply a function
+            that does one or more of the following:
+            <ul>
+                <li>takes in a function as at least one of its arguments</li>
+                <li>returns a function</li>
+            </ul>
+        </p>
+        <p>
+            So, if we operate under the idea that our components are also functions, it stands to reason that a higher-order component is simply a component that
+            takes in a component, and/or returns a component. In practice, it is usually both. But... Why?
+        </p>
+        <p>
+            I'll leave it up to the solid example provided by the <a href="https://reactjs.org/docs/higher-order-components.html">React docs</a> for an example
+            rather than pretending to write my own clean example that probably wouldn't transpile anyway, but basically the point here is we can, much like a base
+            class in an OOP paradigm, abstract code common between multiple components into a higher-level component. This allows us to reuse code, keep our components
+            small, clean, and sticking to their job, and makes it easier to implement similar components in the future.
+        </p>
+        <p>
+            In closing, higher-order components are really just higher-order functions. It's a way of generating a component from a component, given a certain pattern.
+            You can add this to your toolbox next time you refactor a ton of components that are operating on the same object, or listening to the same browser events, etc.
+            to make your code much cleaner and easier to maintain.
+        </p>
+    </div>
+  </body>
+</html>
