@@ -25,10 +25,10 @@
       <div class="content-text">
         <h2>October 28 2020 - Higher-Order Components</h2>
         <p>
-            Have you ever been writing a React component and though to yourself, "Wow, I sure have seen this about 8 times now..."
+            Have you ever been writing a React component and thought to yourself, "Wow, I sure have seen this about 8 times now..."
         </p>
         <p>
-            If so, you're not alone. The nature of React and the front end ecosystem in general makes it difficult to abstract code out.
+            If so, you're not alone. The nature of React and the front-end ecosystem in general makes it difficult to abstract code out.
             Maybe this is just me coming from a full-stack background where I work in Java a lot, but it's just so much more natural to
             use base classes, interfaces, etc. in an OOP environment. And DANG! It's so great when it's done right.
         </p>
@@ -38,12 +38,29 @@
             is not ideal. Sure, there are classes in JS, but ultimately modern JS is better described as <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming.</a>
         </p>
         <p>
-            In a functional programming paradigm, a <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order function</a> is simply a function
+            In a functional programming paradigm (and, I guess also mathematics...), a <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order function</a> is simply a function
             that does one or more of the following:
             <ul>
                 <li>takes in a function as at least one of its arguments</li>
                 <li>returns a function</li>
             </ul>
+        </p>
+        <p>
+            So given that, both
+
+            <pre>
+                const foo = (bar) => bar(1); // bar is a function argument (case 1)
+            </pre>
+
+            and
+
+            <pre>
+                const bar = () => { alert('baz'); }
+
+                const foo = () => bar; // foo returns a function `bar` (case 2)
+            </pre>
+
+            are both higher-order functions!
         </p>
         <p>
             So, if we operate under the idea that our components are also functions, it stands to reason that a higher-order component is simply a component that
@@ -59,6 +76,12 @@
             In closing, higher-order components are really just higher-order functions. It's a way of generating a component from a component, given a certain pattern.
             You can add this to your toolbox next time you refactor a ton of components that are operating on the same object, or listening to the same browser events, etc.
             to make your code much cleaner and easier to maintain.
+        </p>
+        <p>
+            <b>TL;DR:</b>
+            <div>
+                <img src="https://media.tenor.com/images/d9600bb711a5550fe7351c78f9780e45/tenor.png" />
+            </div>
         </p>
     </div>
   </body>
